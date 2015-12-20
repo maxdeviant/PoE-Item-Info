@@ -1,4 +1,4 @@
-﻿; Path of Exile Item Info Tooltip
+; Path of Exile Item Info Tooltip
 ;
 ; Version: 1.8.6 (hazydoc / IGN:Sadou)
 ;
@@ -5482,6 +5482,8 @@ ShowToolTip(String)
     If (Not Opts.DisplayToolTipAtFixedCoords) 
     {
         ToolTip, %String%, X - 135, Y + 35
+        Fonts.SetFixedFont()
+        ToolTip, %String%, X - 135, Y + 35
     }
     Else
     {
@@ -5499,8 +5501,10 @@ ShowToolTip(String)
         YCoord := 0 + ScreenOffsetY
         
         ToolTip, %String%, XCoord, YCoord
+        Fonts.SetFixedFont()
+        ToolTip, %String%, XCoord, YCoord
     }    
-    Fonts.SetFixedFont()
+    ; Fonts.SetFixedFont()
     
     ; Set up count variable and start timer for tooltip timeout
     ToolTipTimeout := 0
